@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <title>物流查询</title>
+
+    <!-- build:js static/app/scripts/reminit.js -->
+    <script type="text/javascript" src="js/reminit.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- endbuild -->
+
+    <!--build:css static/app/css/reset.css-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
+    <!--endbuild-->
+
+    <!--build:css static/app/css/search.css-->
+    <!--endbuild-->
+    <style>
+        .header{
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 0.5rem;
+        }
+        .title{
+            font-size: 0.36rem;
+            color: lightgreen;
+            text-align: center;
+        }
+        .header label{
+            font-size: 0.36rem;
+            color: green;
+            font-weight: bold;
+        }
+        .header input{
+            height: 0.6rem;
+            text-align: left;
+            margin-left: 0.2rem;
+            margin-top: 0.2rem;
+            display: inline-block;
+            border:1px solid green;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+            <div class="title">模拟ios下拉选择日期控件</div>
+            <div>
+                <label for="demo">起止日期:</label><input class="search-date" id="demo" type="text" readonly="" data-lcalendar="2016-05-11,2016-05-11" placeholder="起止日期"/>
+            </div>
+    </div>
+
+<!-- build:js static/app/scripts/search.js -->
+<script type="text/javascript" src="js/calendar.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+<!-- endbuild -->
+<script>
+    var calendar = new LCalendar();
+    calendar.init({
+        'trigger': '#demo', //标签id
+        'type': 'date', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择,
+        'minDate': '1900-1-1', //最小日期
+        'maxDate': new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate() //最大日期
+    });
+</script>
+</body>
+</html>
